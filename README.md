@@ -105,3 +105,62 @@ This seems to be the tool to adjust the CPU power.
 ```
 
 Lowest I have seen is 3.44W by ryzenadj + disabling cores
+
+
+## GPU
+
+```
+# sudo cat /sys/kernel/debug/dri/1/amdgpu_pm_info
+GFX Clocks and Power:
+        400 MHz (MCLK)
+        600 MHz (SCLK)
+        0 MHz (PSTATE_SCLK)
+        0 MHz (PSTATE_MCLK)
+        0 mV (VDDGFX)
+        0 mV (VDDNB)
+        4.11 W (average SoC including CPU)
+        4.11 W (current SoC including CPU)
+
+GPU Temperature: 39 C
+GPU Load: 1 %
+VCN Load: 0 %
+
+SMC Feature Mask: 0x5eb5f3f2cbfffffd
+VCN: Powered down
+
+Clock Gating Flags Mask: 0x3bc38130d
+        Graphics Fine Grain Clock Gating: On
+        Graphics Medium Grain Clock Gating: On
+        Graphics Medium Grain memory Light Sleep: Off
+        Graphics Coarse Grain Clock Gating: On
+        Graphics Coarse Grain memory Light Sleep: On
+        Graphics Coarse Grain Tree Shader Clock Gating: Off
+        Graphics Coarse Grain Tree Shader Light Sleep: Off
+        Graphics Command Processor Light Sleep: Off
+        Graphics Run List Controller Light Sleep: Off
+        Graphics 3D Coarse Grain Clock Gating: On
+        Graphics 3D Coarse Grain memory Light Sleep: On
+        Memory Controller Light Sleep: On
+        Memory Controller Medium Grain Clock Gating: On
+        System Direct Memory Access Light Sleep: Off
+        System Direct Memory Access Medium Grain Clock Gating: Off
+        Bus Interface Medium Grain Clock Gating: On
+        Bus Interface Light Sleep: On
+        Unified Video Decoder Medium Grain Clock Gating: Off
+        Video Compression Engine Medium Grain Clock Gating: Off
+        Host Data Path Light Sleep: Off
+        Host Data Path Medium Grain Clock Gating: Off
+        Digital Right Management Medium Grain Clock Gating: Off
+        Digital Right Management Light Sleep: Off
+        Rom Medium Grain Clock Gating: Off
+        Data Fabric Medium Grain Clock Gating: Off
+        VCN Medium Grain Clock Gating: Off
+        Host Data Path Deep Sleep: Off
+        Host Data Path Shutdown: On
+        Interrupt Handler Clock Gating: On
+        JPEG Medium Grain Clock Gating: Off
+        Repeater Fine Grain Clock Gating: On
+        Perfmon Clock Gating: On
+        Address Translation Hub Medium Grain Clock Gating: On
+        Address Translation Hub Light Sleep: On
+```
