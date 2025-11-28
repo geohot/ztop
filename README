@@ -1,5 +1,6 @@
 Power monitoring for HP ZBook Strix Halo
 
+sudo modprobe ec_sys
 sudo ./ztop.py
 
 We found a fast way to get battery W by reading regs right from the EC
