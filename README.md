@@ -38,7 +38,7 @@ sudo ./ztop.py
 
 Gets battery watts every second by reading regs right from the EC. (30 sec with ACPI)
 
-Reads the MSR for CPU package watts.
+For package watts, we read from the CPU's SMU.
 
 ```
 
@@ -104,7 +104,7 @@ This seems to be the tool to adjust the CPU power.
 | CCLK BUSY VALUE     |       nan | max-performance    |
 ```
 
-Lowest I have seen is 3.44W by ryzenadj + disabling cores
+Lowest I have seen is 3.25W by ryzenadj + disabling cores
 
 
 ## GPU
