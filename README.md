@@ -67,6 +67,22 @@ pkg (W):    4.09
 bat (W):    7.38
 ```
 
+
+## Experiments
+
+I connected over SSH on USB network.
+
+```
+# kills WiFi
+sudo rfkill block wifi
+# kills hyprland
+sudo systemctl stop display-manager
+# turns off display
+echo 1 | sudo tee /sys/class/graphics/fb0/blank
+```
+
+And now we are down to 2.7W on the APU and 3.7W on the laptop
+
 ## CPU (RyzenAdj)
 
 This seems to be the tool to adjust the CPU power.
