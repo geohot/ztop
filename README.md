@@ -37,8 +37,9 @@ sudo modprobe ec_sys
 sudo ./ztop.py
 ```
 
-We found a fast way to get battery W (every second) by reading regs right from the EC.
-We read the MSR for CPU package W
+Gets battery watts every second by reading regs right from the EC. (30 sec with ACPI)
+
+Reads the MSR for CPU package watts.
 
 ```
 
