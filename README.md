@@ -104,4 +104,4 @@ This seems to be the tool to adjust the CPU power.
 | CCLK BUSY VALUE     |       nan | max-performance    |
 ```
 
-Lowest I have seen is 3.59W
+Lowest I have seen is 3.44W by ryzenadj + disabling cores
