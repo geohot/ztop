@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-import os, time, struct
+import os, time, struct, math
 from pathlib import Path
 
-def spark(vs, rows):
+def spark(vs, rows, pad):
+  vs = [0]*(pad-len(vs)) + vs
   blocks = " ▁▂▃▄▅▆▇█"
   def _spark(vs, lo, hi):
     out = []
@@ -20,9 +21,9 @@ def spark(vs, rows):
 def read_uj(): return time.perf_counter_ns(), int(Path("/sys/devices/virtual/powercap/intel-rapl/intel-rapl:0/energy_uj").read_text())
 last_uj = read_uj()
 
-HIST = 30
-pkg_history = [0]*HIST
-bat_history = [0]*HIST
+HIST = 40
+pkg_history = []
+bat_history = []
 def draw():
   global last_uj, pkg_history, bat_history
   print("\033[2J\033[H", end="")
@@ -52,11 +53,15 @@ def draw():
   bat_history.append(bat_w)
   pkg_history = pkg_history[-HIST:]
   bat_history = bat_history[-HIST:]
+  pkg_min = min(pkg_history)
+  pkg_max = max(pkg_history)
+  bat_min = min(bat_history)
+  bat_max = max(bat_history)
 
-  print(spark(pkg_history, 10))
-  print(f"pkg (W): {pkg_w:7.2f}")
-  print(spark(bat_history, 20))
-  print(f"bat (W): {bat_w:7.2f}")
+  print(spark(pkg_history, 10, pad=HIST))
+  print(f"pkg (W): {pkg_w:6.2f}  [min {pkg_min:6.2f} max {pkg_max:6.2f}]")
+  print(spark(bat_history, 20, pad=HIST))
+  print(f"bat (W): {bat_w:6.2f}  [min {bat_min:6.2f} max {bat_max:6.2f}]")
 
   last_uj = uj
 
