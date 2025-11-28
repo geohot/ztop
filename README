@@ -1,1 +1,42 @@
 Power monitoring for HP ZBook Strix Halo
+
+sudo ./ztop.py
+
+We found a fast way to get battery W by reading regs right from the EC
+
+CPU draws about 4W, whole laptop is 7-8W
+
+Unless you turn on the keyboard backlight, that is 2 stupid watts for weak light.
+
+
+
+
+                  ▁
+           ▃      █
+▁ ▁ ▁▁▅▁▂▁▁█▁▁▁ ▄▂█▃▁ ▂▃    ▁
+█████████████████████▂████▇███
+██████████████████████████████
+██████████████████████████████
+pkg (W):    4.09
+
+
+
+
+
+
+
+
+                  ▁
+                  █
+            ▄     █▆
+▆           █     ██
+█▁   ▃ █▁▄█ █ ▂ ▃▇██▂ ▂▃   ▃
+██▂▅▄█▆████▇█▇█▃████████▆███▄▃
+██████████████████████████████
+██████████████████████████████
+██████████████████████████████
+██████████████████████████████
+██████████████████████████████
+██████████████████████████████
+bat (W):    7.38
+
