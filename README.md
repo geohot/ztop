@@ -33,7 +33,6 @@ Looking into other things.
 ## Usage
 
 ```bash
-sudo modprobe ec_sys
 sudo ./ztop.py
 ```
 
@@ -67,3 +66,42 @@ pkg (W):    4.09
 ██████████████████████████████
 bat (W):    7.38
 ```
+
+## CPU (RyzenAdj)
+
+This seems to be the tool to adjust the CPU power.
+
+`sudo ./ryzenadj --info` shows all the knobs.
+
+```
+|        Name         |   Value   |     Parameter      |
+|---------------------|-----------|--------------------|
+| STAPM LIMIT         |    60.000 | stapm-limit        |
+| STAPM VALUE         |     4.272 |                    |
+| PPT LIMIT FAST      |    60.000 | fast-limit         |
+| PPT VALUE FAST      |     6.396 |                    |
+| PPT LIMIT SLOW      |    20.000 | slow-limit         |
+| PPT VALUE SLOW      |     4.240 |                    |
+| StapmTimeConst      |       nan | stapm-time         |
+| SlowPPTTimeConst    |       nan | slow-time          |
+| PPT LIMIT APU       |    70.000 | apu-slow-limit     |
+| PPT VALUE APU       |     0.000 |                    |
+| TDC LIMIT VDD       |       nan | vrm-current        |
+| TDC VALUE VDD       |       nan |                    |
+| TDC LIMIT SOC       |       nan | vrmsoc-current     |
+| TDC VALUE SOC       |       nan |                    |
+| EDC LIMIT VDD       |       nan | vrmmax-current     |
+| EDC VALUE VDD       |       nan |                    |
+| EDC LIMIT SOC       |       nan | vrmsocmax-current  |
+| EDC VALUE SOC       |       nan |                    |
+| THM LIMIT CORE      |   100.000 | tctl-temp          |
+| THM VALUE CORE      |    38.754 |                    |
+| STT LIMIT APU       |   100.000 | apu-skin-temp      |
+| STT VALUE APU       |    38.754 |                    |
+| STT LIMIT dGPU      |   100.000 | dgpu-skin-temp     |
+| STT VALUE dGPU      |    38.785 |                    |
+| CCLK Boost SETPOINT |       nan | power-saving /     |
+| CCLK BUSY VALUE     |       nan | max-performance    |
+```
+
+Lowest I have seen is 3.59W

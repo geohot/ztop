@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import time, struct
+import os, time, struct
 from pathlib import Path
 
 def spark(vs, rows):
@@ -61,6 +61,7 @@ def draw():
   last_uj = uj
 
 if __name__ == "__main__":
+  os.system("modprobe ec_sys")
   while 1:
     draw()
     time.sleep(1)
