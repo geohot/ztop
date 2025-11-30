@@ -180,3 +180,12 @@ Clock Gating Flags Mask: 0x3bc38130d
         Address Translation Hub Medium Grain Clock Gating: On
         Address Translation Hub Light Sleep: On
 ```
+
+## The BIOS
+
+BIOS is in `X89_01030200.bin` with SHA1 `5059760896630b3e7184211081071442baf65348`
+
+`pip install psptool` can parse it, `psptool X89_01030200.bin -Xunk`
+
+There's 69 files in here! No wonder it draws 4W it has to run 69 files.
+
